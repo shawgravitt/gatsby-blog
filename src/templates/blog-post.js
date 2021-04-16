@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ShareButtons from "../components/share-buttons"
+
 
 
 const BlogPostTemplate = ({ data, location }) => {
@@ -14,12 +14,6 @@ const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
   const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
-
-  const ShareTitle = `Read ${post.frontmatter.title} `;
-  const url = location.href;
-  const twitterHandle = "shawgravitt";
-  const ShareTags = post.frontmatter.tags;
-
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -41,7 +35,7 @@ const BlogPostTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <ShareButtons title={ShareTitle} url={url} twitterHandle={twitterHandle} tags={ShareTags} />
+
         <hr />
         <footer>
           <Bio />
