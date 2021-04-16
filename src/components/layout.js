@@ -1,5 +1,8 @@
-import * as React from "react"
+import React, { useState } from "react";
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+import MailchimpForm from "../components/mailchimp"
+
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -20,15 +23,66 @@ const Layout = ({ location, title, children }) => {
     )
   }
 
+  const [isActive, setActive] = useState("false");
+
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
+  
+    
+  
+
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+    <div className="wrapper"  data-is-root-path={isRootPath}>
+      <div className="body">
+        <header className="global-header">
+        <Link to="/">
+          <StaticImage
+            className="bio-avatar"
+            layout="fixed"
+            formats={["AUTO", "WEBP", "AVIF"]}
+            src="../images/profile-pic.png"
+            placeholder="tracedSVG"
+            width={50}
+            height={50}
+            quality={95}
+            alt="Shaw Gravitt"
+          />
+        </Link>
+        {header}
+        <button id="menuButton" onClick={handleToggle}
+           className={`hamburger hamburger--minus ${!isActive ? "is-active" : ""}`} 
+          type="button" aria-label="Menu" aria-controls="navigation" aria-expanded={`${!isActive ? "true" : "false"}`}>
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+        </button>
+      </header>
+        <div className={`main-nav ${!isActive ? "is-active" : ""}`}>
+          <MailchimpForm />
+          <nav>
+            <ul>
+              <li>
+                <Link to="/contact">Contact Me</Link>
+              </li>
+              <li>
+                <Link to="/about">About Me</Link>
+              </li>
+              <li>
+                <Link to="/books-i-love">Books I Love</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <main className="reading-column">{children}</main>
+        <aside className="promo"></aside>
+      
+        <footer className="main-footer">
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        </footer>
+      </div>
     </div>
   )
 }

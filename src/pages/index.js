@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -13,7 +12,6 @@ const BlogIndex = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -26,7 +24,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -44,7 +41,20 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <ul style={{
+                      display: `flex`,
+                      flexWrap: `wrap`,
+                      justifyContent: `space-between`,
+                      listStyle: `none`,
+                      padding: 0,
+                    }}>
+                      <li style={{marginBottom: 0}}>
+                        <small>{post.frontmatter.date}</small><br/>
+                      </li>
+                      <li>
+                        <small>{post.timeToRead} minute read</small>
+                      </li>
+                  </ul>
                 </header>
                 <section>
                   <p
@@ -75,6 +85,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
+        timeToRead
         fields {
           slug
         }
