@@ -51,7 +51,7 @@ const Layout = ({ location, title, children }) => {
         </Link>
         {header}
         <button id="menuButton" onClick={handleToggle}
-           className={`hamburger hamburger--minus ${!isActive ? "is-active" : ""}`} 
+          className={`hamburger hamburger--minus ${!isActive ? "is-active" : ""}`} 
           type="button" aria-label="Menu" aria-controls="navigation" aria-expanded={`${!isActive ? "true" : "false"}`}>
             <div className="hamburger-box">
               <div className="hamburger-inner"></div>

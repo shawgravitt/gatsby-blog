@@ -3,14 +3,14 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const PrivacyPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Contact Me" />
+      <Seo title="Contact Me" />
       <h1>Privacy</h1>
       <p>Your privacy matters to me and I keep this site simple.</p>
       <p>There are no cookies or analytics used on this site. Meaning, I have no idea you are here.</p>
