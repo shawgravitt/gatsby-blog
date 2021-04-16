@@ -16,7 +16,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
 
   const ShareTitle = `Read ${post.frontmatter.title} `;
-  const ShareUrl = post.fields.slug;
+  const url = location.href;
   const twitterHandle = "shawgravitt";
   const ShareTags = post.frontmatter.tags;
 
@@ -41,7 +41,7 @@ const BlogPostTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <ShareButtons title={ShareTitle} url={ShareUrl} twitterHandle={twitterHandle} tags={ShareTags} />
+        <ShareButtons title={ShareTitle} url={url} twitterHandle={twitterHandle} tags={ShareTags} />
         <hr />
         <footer>
           <Bio />

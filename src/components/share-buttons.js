@@ -11,23 +11,23 @@ import {
   RedditIcon
 } from 'react-share'
 
-const ShareButtons = ({ShareTitle, ShareUrl, twitterHandle, tags}) => {
+const ShareButtons = ({ShareTitle, url, twitterHandle, tags}) => {
 
     return(
         <div>
-          <FacebookShareButton url={ShareUrl} >
+          <FacebookShareButton url={url} >
                 <FacebookIcon  size={40} round={true}/>
          </FacebookShareButton>
 
-          <TwitterShareButton url={ShareUrl} title={ShareTitle} via={twitterHandle} hashtags={tags}>
+          <TwitterShareButton url={url} title={ShareTitle} via={twitterHandle} hashtags={tags}>
                 <TwitterIcon  size={40} round={true} />
           </TwitterShareButton>
 
-          <RedditShareButton url={ShareUrl} title={ShareTitle} >
+          <RedditShareButton url={url} title={ShareTitle} >
             <RedditIcon  size={40} round={true} />
           </RedditShareButton>
 
-          <EmailShareButton url={ShareUrl} subject={ShareTitle}>
+          <EmailShareButton url={url} subject={ShareTitle}>
             <EmailIcon  size={40} round={true} />
           </EmailShareButton>
 
