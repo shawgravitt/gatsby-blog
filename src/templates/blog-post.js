@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 
 import Bio from "../components/bio"
@@ -30,7 +31,16 @@ const BlogPostTemplate = ({ data, location }) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
-        <Img fluid={featuredImgFluid} />
+        {/* <Img fluid={featuredImgFluid} /> */}
+        <GatsbyImage
+            layout="fixed"
+            formats={["AUTO", "WEBP", "AVIF"]}
+            image={featuredImgFluid}
+            src={featuredImgFluid}
+            placeholder="tracedSVG"
+            quality={95}
+            alt="Shaw Gravitt"
+          />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
