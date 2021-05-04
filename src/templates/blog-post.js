@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
-import { GatsbyImage } from "gatsby-plugin-image"
+// import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 import Bio from "../components/bio"
@@ -14,7 +14,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
-  const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
+  const image = getImage(post.frontmatter.featuredImage)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -32,15 +32,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <p>{post.frontmatter.date}</p>
         </header>
         {/* <Img fluid={featuredImgFluid} /> */}
-        <GatsbyImage
-            layout="fixed"
-            formats={["AUTO", "WEBP", "AVIF"]}
-            image={featuredImgFluid}
-            src={featuredImgFluid}
-            placeholder="tracedSVG"
-            quality={95}
-            alt="Shaw Gravitt"
-          />
+        <GatsbyImage image={image} alt={post.frontmatter.title} />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
@@ -107,9 +99,11 @@ export const pageQuery = graphql`
         description
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              width: 675,
+              placeholder: TRACED_SVG,
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
       }

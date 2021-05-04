@@ -377,9 +377,9 @@ a:focus {
 }
 .reading-column {
   grid-area: content;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   padding: 20px;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
 .main-nav {
   grid-area: nav;
@@ -409,7 +409,7 @@ a:focus {
   display: grid;
   column-gap: 20px;
   grid-template-columns: 1fr;
-  overflow: hidden;
+  /* overflow: hidden; */
   grid-template-areas:
     "header"
     "nav"
@@ -446,9 +446,19 @@ a:focus {
   .body {
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-areas: 
-      "header header header"
+      "header content promo"
       "nav content promo"
+      ". content promo"
       "footer footer footer"
+  }
+  .global-header {
+    position: sticky;
+    top: 10px;
+  }
+  .promo,
+  .main-nav {
+    position: sticky;
+    top: 80px;
   }
 }
 

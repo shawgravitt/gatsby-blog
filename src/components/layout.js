@@ -28,36 +28,33 @@ const Layout = ({ location, title, children }) => {
   const handleToggle = () => {
     setActive(!isActive);
   };
-  
-    
-  
 
   return (
     <div className="wrapper"  data-is-root-path={isRootPath}>
       <div className="body">
         <header className="global-header">
-        <Link to="/">
-          <StaticImage
-            className="bio-avatar"
-            layout="fixed"
-            formats={["AUTO", "WEBP", "AVIF"]}
-            src="../images/profile-pic.png"
-            placeholder="tracedSVG"
-            width={50}
-            height={50}
-            quality={95}
-            alt="Shaw Gravitt"
-          />
-        </Link>
-        {header}
-        <button id="menuButton" onClick={handleToggle}
-          className={`hamburger hamburger--minus ${!isActive ? "is-active" : ""}`} 
-          type="button" aria-label="Menu" aria-controls="navigation" aria-expanded={`${!isActive ? "true" : "false"}`}>
-            <div className="hamburger-box">
-              <div className="hamburger-inner"></div>
-            </div>
-        </button>
-      </header>
+          <Link to="/">
+            <StaticImage
+              className="bio-avatar"
+              layout="fixed"
+              formats={["AUTO", "WEBP", "AVIF"]}
+              src="../images/profile-pic.png"
+              placeholder="tracedSVG"
+              width={50}
+              height={50}
+              quality={95}
+              alt="Shaw Gravitt"
+            />
+          </Link>
+          {header}
+          <button id="menuButton" onClick={handleToggle}
+            className={`hamburger hamburger--minus ${!isActive ? "is-active" : ""}`} 
+            type="button" aria-label="Menu" aria-controls="navigation" aria-expanded={`${!isActive ? "true" : "false"}`}>
+              <div className="hamburger-box">
+                <div className="hamburger-inner"></div>
+              </div>
+          </button>
+        </header>
         <div className={`main-nav ${!isActive ? "is-active" : ""}`}>
           <MailchimpForm />
           <nav>
@@ -74,9 +71,9 @@ const Layout = ({ location, title, children }) => {
             </ul>
           </nav>
         </div>
-        <main className="reading-column">{children}</main>
         <aside className="promo"></aside>
-      
+        <main className="reading-column">{children}</main>
+
         <footer className="main-footer">
           © {new Date().getFullYear()}, Built with
           {` `}
