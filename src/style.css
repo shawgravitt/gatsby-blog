@@ -1,3 +1,9 @@
+/* colors:
+#FFF8E7
+#01426A
+#D45A23
+#414A4C */
+
 /* CSS Custom Properties Definitions */
 
 :root {
@@ -51,10 +57,10 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
-  --color-text: #2e353f;
-  --color-text-light: #4f5969;
-  --color-heading: #1a202c;
+  --color-primary: #01426A;
+  --color-text: #18393E ;
+  --color-text-light: #414A4C;
+  --color-heading: #01426A;
   --color-heading-black: black;
   --color-accent: #d1dce5;
 }
@@ -78,6 +84,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
+  background: #FFF8E7;
 }
 
 footer {
@@ -225,37 +232,21 @@ table thead tr th {
 
 a {
   color: var(--color-primary);
+  font-family: var(--font-heading);
+  transition: color 0.33s ease;
+  -webkit-transition: color 0.33s ease;
+  -moz-transition: color 0.33s ease;
+  -ms-transition: color 0.33s ease;
+  -o-transition: color 0.33s ease;
 }
 
 a:hover,
 a:focus {
+  color: #BF5700;
   text-decoration: none;
 }
 
 /* Custom classes */
-
-/* .reading-column {
-  margin: var(--spacing-0) auto;
-  max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-10) var(--spacing-5);
-}
-
-.reading-column[data-is-root-path="true"] .bio {
-  margin-bottom: var(--spacing-20);
-}
-
-.global-header {
-  margin-bottom: var(--spacing-12);
-  position: fixed;
-  height: 100vh;
-  width: 22.5vw;
-  max-width: 333px;
-  min-width: 270px;
-  padding: 13px;
-  border-top: 7px solid #bf5700;
-  border-right: 2px solid #BF5700;
-
-} */
 
 .main-heading {
   font-size: var(--fontSize-3);
@@ -275,7 +266,7 @@ a:focus {
 
 .post-list-item h2 {
   font-size: var(--fontSize-4);
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
   margin-bottom: var(--spacing-2);
   margin-top: var(--spacing-0);
 }
@@ -293,7 +284,7 @@ a:focus {
 
 .bio {
   display: flex;
-  margin-bottom: var(--spacing-16);
+  margin-bottom: 0;
 }
 
 .bio p {
@@ -322,6 +313,11 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+.blog-post-nav {
+  max-width: var(--maxWidth-wrapper);
+  margin: auto;
+}
+
 .blog-post-nav ul {
   margin: var(--spacing-0);
 }
@@ -329,11 +325,25 @@ a:focus {
 .btn {
   background: #BF5700;
   padding: 10px 12px;
+  border: none;
+  color: #FFF8E7;
+  cursor: pointer;
+  transition: background 0.33s ease-in;
+  -webkit-transition: background 0.33s ease-in;
+  -moz-transition: background 0.33s ease-in;
+  -ms-transition: background 0.33s ease-in;
+  -o-transition: background 0.33s ease-in;
+}
+
+.btn:hover {
+  background: var(--color-primary);
 }
 
 .email {
   width: calc(100% - 80px);
   padding-left: var(--spacing-2);
+  border: 1px solid var(--color-primary);
+  border-right: none;
 }
 
 #emailSubscribe {
@@ -343,7 +353,6 @@ a:focus {
 #emailSubscribe input{
   border-radius: 0;
   height: 40px;
-  border: 1px solid #000;
   vertical-align: middle;
   
 }
@@ -369,22 +378,34 @@ a:focus {
 }
 
 
-
-
+/* Site Layout */
 .global-header {
   grid-area: header;
-  padding: 10px 20px;
+  padding: 50px 20px 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  /* border-top: 5px solid #BF5700; */
 }
 .reading-column {
   grid-area: content;
-  /* overflow-y: scroll; */
   padding: 20px;
-  /* scrollbar-width: none; */
+  border-left: 2px solid var(--color-text);
 }
 .main-nav {
   grid-area: nav;
   padding: 0 20px;
   display: none;
+}
+.main-nav ul {
+  padding-left: 0;
+}
+.main-nav li {
+  list-style: none;
+  text-align: center;
+}
+.main-nav a {
+  text-decoration: none;
 }
 .main-nav.is-active {
   display: block;
@@ -398,44 +419,39 @@ a:focus {
   padding: 10px 20px;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  width: 100vw;
-  height: 100vh;
-}
-
 .body {
   display: grid;
   column-gap: 20px;
   grid-template-columns: 1fr;
-  /* overflow: hidden; */
   grid-template-areas:
     "header"
     "nav"
     "content"
     "promo"
     "footer";
-
-  
-}
-
-.body ::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
 }
 
 @media (min-width: 500px) {
   .body {
     grid-template-columns: 1fr 2fr;
     grid-template-areas: 
-      "header header"
+      "header content"
       "nav content"
       "promo content"
-      "footer footer"
+      ". content"
+      "footer content"
   }
   .main-nav {
     display: block;
+    position: sticky;
+    top: 155px;
+  }
+  .promo {
+    position: sticky;
+    top: 420px;
+  }
+  .main-nav li {
+    text-align: left;
   }
   #menuButton.hamburger {
     display: none;
@@ -449,23 +465,12 @@ a:focus {
       "header content promo"
       "nav content promo"
       ". content promo"
-      "footer footer footer"
+      "footer content promo"
   }
-  .global-header {
-    position: sticky;
-    top: 10px;
-  }
-  .promo,
-  .main-nav {
-    position: sticky;
+  .promo {
     top: 80px;
   }
 }
-
-
-
-
-
 
 
 .hamburger {

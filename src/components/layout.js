@@ -40,8 +40,7 @@ const Layout = ({ location, title, children }) => {
               formats={["AUTO", "WEBP", "AVIF"]}
               src="../images/profile-pic.png"
               placeholder="tracedSVG"
-              width={50}
-              height={50}
+              width={88}
               quality={95}
               alt="Shaw Gravitt"
             />
@@ -71,7 +70,9 @@ const Layout = ({ location, title, children }) => {
             </ul>
           </nav>
         </div>
-        <aside className="promo"></aside>
+        <aside className="promo">
+          <h2>Promo</h2>
+        </aside>
         <main className="reading-column">{children}</main>
 
         <footer className="main-footer">

@@ -46,6 +46,7 @@ export default class MailchimpForm extends React.Component {
         <form onSubmit={this._handleSubmit}>
           <label htmlFor="email">Subscribe</label>
           <input
+            id="email"
               type="email"
               onChange={this._handleChange}
               placeholder="email"

@@ -114,8 +114,8 @@ module.exports = {
         name: `Shaw Gravitt's Blog`,
         short_name: `Shaw'sBlog`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#FFF8E7`,
+        theme_color: `#01426A`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
@@ -139,7 +139,7 @@ module.exports = {
         excludePaths: ["/"],
         height: 3,
         prependToBody: false,
-        color: `#663399`,
+        color: `#BF5700`,
       }
     },
   ],
