@@ -31,7 +31,6 @@ const BlogPostTemplate = ({ data, location }) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
-        {/* <Img fluid={featuredImgFluid} /> */}
         <GatsbyImage image={image} alt={post.frontmatter.title} />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
