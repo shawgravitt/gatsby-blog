@@ -34,16 +34,18 @@ const Layout = ({ location, title, children }) => {
       <div className="body">
         <header className="global-header">
           <Link to="/">
-            <StaticImage
-              className="bio-avatar"
-              layout="fixed"
-              formats={["AUTO", "WEBP", "AVIF"]}
-              src="../images/profile-pic.png"
-              placeholder="tracedSVG"
-              width={88}
-              quality={95}
-              alt="Shaw Gravitt"
-            />
+            <div className="header-image">
+              <StaticImage
+                className="bio-avatar"
+                layout="fixed"
+                formats={["AUTO", "WEBP", "AVIF"]}
+                src="../images/profile-pic.png"
+                placeholder="tracedSVG"
+                width={77}
+                quality={95}
+                alt="Shaw Gravitt"
+              />
+            </div>
           </Link>
           {header}
           <div className="menu-button-wrapper">
@@ -55,7 +57,6 @@ const Layout = ({ location, title, children }) => {
           </div>
         </header>
         <div className={`main-nav ${!isActive ? "is-active" : ""}`}>
-          <MailchimpForm />
           <nav>
             <ul>
               <li>
@@ -69,6 +70,7 @@ const Layout = ({ location, title, children }) => {
               </li>
             </ul>
           </nav>
+          <MailchimpForm />
         </div>
         <aside className="promo">
           <h2>Promo</h2>

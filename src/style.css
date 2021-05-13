@@ -279,12 +279,14 @@ a:focus {
   margin-bottom: var(--spacing-0);
 }
 
-.bio-avatar {
+.header-image {
   margin-right: var(--spacing-4);
   margin-bottom: var(--spacing-0);
-  border-radius: 100%;
   display: inline-block;
   vertical-align: middle;
+  width: 77px;
+  height: 77px;
+  border-radius: 100%;
 }
 
 .blog-post header h1 {
@@ -349,6 +351,10 @@ a:focus {
   font-weight: 600;
   font-size: var(--fontSize-1);
   font-family: var(--font-heading);
+}
+
+#emailSubscribe p {
+  margin-bottom: var(--spacing-3);
 }
 
 .menu-button-wrapper {
@@ -482,19 +488,35 @@ a:focus {
       "nav content"
       "promo content"
       ". content"
-      "footer content"
+      "footer content";
+      padding-bottom: 0;
   }
   .main-nav {
     display: block;
     position: sticky;
     top: 155px;
+    opacity: 1;
+    bottom: unset;
+    height: auto;
+    border-bottom: none;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+}
+  .menu-button-wrapper {
+    display: none;
   }
   .promo {
     position: sticky;
     top: 420px;
   }
+  .reading-column {
+    border-left: 2px solid var(--color-text);
+  }
   .global-header {
-    padding: 50px 20px 10px 20px;
+    padding: 50px 0 10px 20px;
   }
   .main-nav li {
     text-align: left;
@@ -516,8 +538,10 @@ a:focus {
   .promo {
     top: 80px;
   }
-  .reading-column {
-    border-left: 2px solid var(--color-text);
+  
+  .header-image {
+    width: 88px;
+    height: 88px;
   }
 }
 
