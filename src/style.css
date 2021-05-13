@@ -359,7 +359,7 @@ a:focus {
 
 .menu-button-wrapper {
   position: fixed;
-  bottom: 78px;
+  bottom: 0;
   width: 100%;
   background: var(--color-body-background);
   display: block;
