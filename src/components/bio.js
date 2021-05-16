@@ -48,7 +48,7 @@ const Bio = () => {
           Written by <strong>{author.name}</strong> {author?.summary || null}
           {` `}
           <Link to="/newsletter">
-            You should join my mailing list.
+            You should join my private email list.
           </Link>
         </p>
       )}

@@ -4,7 +4,6 @@ title:  "9 Meals to Chaos"
 date:   2019-07-24 05:00:00 -0400
 featuredImage: 9-meals-to-chaos.jpg
 ---
-![9 Meals to Chaos](./9-meals-to-chaos.jpg)
 
 At first, it didn’t seem like much. A few things weren’t being restocked at the stores, more gaps in the shelves. If we couldn’t replace something in our pantry, we went without, assuming it’d be back soon.
 

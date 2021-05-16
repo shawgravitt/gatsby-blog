@@ -1,9 +1,9 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-// import Img from "gatsby-image"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
+import ShareButtons from "../components/share-buttons"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -15,6 +15,8 @@ const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
   const image = getImage(post.frontmatter.featuredImage)
+  const twitterHandle = 'shawgravitt'
+  const url = location.href
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -36,8 +38,11 @@ const BlogPostTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
+        
+        
+          <ShareButtons ShareTitle={post.frontmatter.title} url={url} twitterHandle={twitterHandle} />
+        
 
-        <hr />
         <footer>
           <Bio />
         </footer>

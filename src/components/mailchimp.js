@@ -43,6 +43,7 @@ export default class MailchimpForm extends React.Component {
   render () {
     return (
       <div id="emailSubscribe">
+        <p><strong>My Private Email List</strong></p>
         <p>For new posts, interesting finds, and (eventual) book anouncemnts, get on my private email list, here:</p>
         <form onSubmit={this._handleSubmit}>
           <label htmlFor="email">Subscribe</label>

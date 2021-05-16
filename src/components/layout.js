@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import MailchimpForm from "../components/mailchimp"
+import MailchimpForm from "./mailchimp"
 
 
 const Layout = ({ location, title, children }) => {
@@ -63,7 +63,7 @@ const Layout = ({ location, title, children }) => {
                 <Link to="/contact">Contact Me</Link>
               </li>
               <li>
-                <Link to="/about">About Me</Link>
+                <Link to="/about">About Me (Now)</Link>
               </li>
               <li>
                 <Link to="/books-i-love">Books I Love</Link>

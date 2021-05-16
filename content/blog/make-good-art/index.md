@@ -5,7 +5,6 @@ date:   2019-07-13 08:08:08 -0400
 categories: inspiration
 permalink: /:title
 featuredImage: neil-g.jpg
-excerpt: "Neil Gaiman  gives one of the greatest commencement speeches of all time"
 ---
 <div class="video-responsive">
     <iframe title="youtubeMakeGoodArt" width="560" height="315" src="https://www.youtube.com/embed/ikAb-NYkseI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

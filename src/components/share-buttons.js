@@ -8,31 +8,43 @@ import {
   EmailShareButton,
   EmailIcon,
   RedditShareButton,
-  RedditIcon
+  RedditIcon,
+  InstapaperShareButton,
+  InstapaperIcon,
+  PocketShareButton,
+  PocketIcon,
 } from 'react-share'
 
-const ShareButtons = ({ShareTitle, url, twitterHandle, tags}) => {
+const ShareButtons = ({ShareTitle, url, twitterHandle}) => {
 
     return(
-        <div>
+        <div className="share-button-wrapper">
+          <h5>Sharing is Caring:</h5>
           <FacebookShareButton url={url} >
-                <FacebookIcon  size={40} round={true}/>
+                <FacebookIcon  size={33} round={true} bgStyle={{fill: "#01426A"}}/>
          </FacebookShareButton>
 
-          <TwitterShareButton url={url} title={ShareTitle} via={twitterHandle} hashtags={tags}>
-                <TwitterIcon  size={40} round={true} />
+          <TwitterShareButton url={url} title={ShareTitle} via={twitterHandle}>
+                <TwitterIcon  size={33} round={true} bgStyle={{fill: "#01426A"}} />
           </TwitterShareButton>
 
           <RedditShareButton url={url} title={ShareTitle} >
-            <RedditIcon  size={40} round={true} />
+            <RedditIcon  size={33} round={true} bgStyle={{fill: "#01426A"}} />
           </RedditShareButton>
 
+          <InstapaperShareButton title={ShareTitle} >
+            <InstapaperIcon  size={33} round={true} bgStyle={{fill: "#01426A"}} />
+          </InstapaperShareButton>
+
+          <PocketShareButton title={ShareTitle}>
+            <PocketIcon  size={33} round={true} bgStyle={{fill: "#01426A"}} />
+          </PocketShareButton>
+
           <EmailShareButton url={url} subject={ShareTitle}>
-            <EmailIcon  size={40} round={true} />
+            <EmailIcon  size={33} round={true} bgStyle={{fill: "#01426A"}} />
           </EmailShareButton>
 
         </div>
       )
-
 }
 export default ShareButtons
