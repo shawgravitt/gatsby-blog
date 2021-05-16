@@ -218,19 +218,20 @@ table thead tr th {
 /* Link */
 
 a {
-  color: var(--color-primary);
+  color: var(--color-accent);
   /* font-family: var(--font-heading); */
   transition: color 0.33s ease;
   -webkit-transition: color 0.33s ease;
   -moz-transition: color 0.33s ease;
   -ms-transition: color 0.33s ease;
   -o-transition: color 0.33s ease;
+  text-decoration: none;
 }
 
 a:hover,
 a:focus {
   color: var(--color-accent);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /* Custom classes */
@@ -382,9 +383,10 @@ a:focus {
   position: fixed;
   bottom: 0;
   width: 100%;
+  font-size: var(--fontSize-2);
   background: var(--color-body-background);
   display: block;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
   left: 0;
   right: 0;
@@ -418,11 +420,10 @@ a:focus {
 .main-nav {
   grid-area: nav;
   padding: 0 20px;
-  padding-top: 25px;
   z-index: 9;
   position: fixed;
   width: 100%;
-  bottom: 54px;
+  bottom: 64px;
   background: var(--color-body-background);
   opacity: 0;
   height: 0;
@@ -446,18 +447,23 @@ a:focus {
   list-style: none;
   text-align: center;
 }
-.main-nav a {
+.main-nav nav a {
   text-decoration: none;
+  font-size: var(--fontSize-2);
+  font-family: var(--font-heading);
+  color: var(--color-text);
+}
+.main-nav nav a:hover {
+  color: var(--color-accent);
 }
 .main-nav.is-active {
   opacity: 1;
   height: auto;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-
+  transform: translate3d(0, 0%, 0);
+  -webkit-transform: translate3d(0, 0%, 0);
+  -moz-transform: translate3d(0, 0%, 0);
+  -ms-transform: translate3d(0, 0%, 0);
+  -o-transform: translate3d(0, 0%, 0);
   transition: transform .3s linear;
   -webkit-transition: transform .3s linear;
   -moz-transition: transform .3s linear;
