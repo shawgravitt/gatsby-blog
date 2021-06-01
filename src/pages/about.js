@@ -23,7 +23,7 @@ const AboutPage = ({ data, location }) => {
           <li>I write for fun.</li>
           <li>Drinking beer at a local brewery on a Saturday afternoon a perfect way to spend hours.</li>
           <li>I build <a href="https://www.shopify.com/?ref=shaw-gravitt" target="_blank" rel="noreferrer">Shopify websites</a> to pay the bills</li>
-          <li>I'm pretty shy and quiet until you get to know me, and then I still have always have a ton to say.</li>
+          <li>I'm pretty shy and quiet until you get to know me, and then I still don't always have a ton to say.</li>
           <li>Breaking my neck in 2013 was one of the best things to ever happen to me.</li>
         </ul>
 
