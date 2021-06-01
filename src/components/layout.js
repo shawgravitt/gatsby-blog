@@ -65,9 +65,6 @@ const Layout = ({ location, title, children }) => {
               <li>
                 <Link to="/about">About Me (Now)</Link>
               </li>
-              <li>
-                <Link to="/books-i-love">Books I Love</Link>
-              </li>
             </ul>
           </nav>
           <MailchimpForm />
