@@ -209,7 +209,6 @@ table thead tr th {
 
 a {
   color: var(--color-secondary);
-  /* font-family: var(--font-heading); */
   transition: color 0.33s ease;
   -webkit-transition: color 0.33s ease;
   -moz-transition: color 0.33s ease;
@@ -231,6 +230,20 @@ a:focus {
   margin: 0;
   display: inline-block;
   vertical-align: middle;
+}
+
+.header-link-home {
+  font-size: var(--fontSize-3);
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+
+  font-weight: var(--fontWeight-bold);
+  font-family: var(--font-heading);
+  text-decoration: none;
+  color: var(--color-primary);
+  line-height: var(--lineHeight-tight);
+  letter-spacing: -0.025em;
 }
 
 .blog-post,
@@ -257,13 +270,7 @@ a:focus {
   display: none;
 }
 
-.header-link-home {
-  font-weight: var(--fontWeight-bold);
-  font-family: var(--font-heading);
-  text-decoration: none;
-  font-size: var(--fontSize-3);
-  color: var(--color-primary);
-}
+
 
 .bio {
   margin-bottom: 0;
