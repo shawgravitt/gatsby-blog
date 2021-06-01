@@ -73,7 +73,7 @@ const Layout = ({ location, title, children }) => {
           <MailchimpForm />
         </div>
         <aside className="promo">
-          <h2>Promo</h2>
+          
         </aside>
         <main className="reading-column">{children}</main>
 

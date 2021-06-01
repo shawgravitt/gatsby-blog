@@ -1,9 +1,3 @@
-/* colors:
-#FFF8E7
-#01426A
-#D45A23
-#414A4C */
-
 /* CSS Custom Properties Definitions */
 
 :root {
@@ -58,13 +52,9 @@
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
   --color-primary: #000;
-  --color-text: #000 ;
+  --color-secondary: #ba0c2f;
+  --color-base: #fff;
   --color-text-light: #554F47;
-  --color-heading: #000;
-  --color-heading-black: #000;
-  --color-accent: #ba0c2f;
-
-  --color-body-background: #FFF;
 }
 
 /* HTML elements */
@@ -85,8 +75,8 @@ html {
 body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
-  color: var(--color-text);
-  background: var(--color-body-background);
+  color: var(--color-primary);
+  background: var(--color-base);
 }
 
 footer {
@@ -107,7 +97,7 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: var(--spacing-6);
   line-height: var(--lineHeight-tight);
   letter-spacing: -0.025em;
-  color: var(--color-heading);
+  color: var(--color-primary);
 }
 
 h2,h3,h4,h5,h6 {
@@ -218,7 +208,7 @@ table thead tr th {
 /* Link */
 
 a {
-  color: var(--color-accent);
+  color: var(--color-secondary);
   /* font-family: var(--font-heading); */
   transition: color 0.33s ease;
   -webkit-transition: color 0.33s ease;
@@ -230,7 +220,7 @@ a {
 
 a:hover,
 a:focus {
-  color: var(--color-accent);
+  color: var(--color-secondary);
   text-decoration: underline;
 }
 
@@ -272,6 +262,7 @@ a:focus {
   font-family: var(--font-heading);
   text-decoration: none;
   font-size: var(--fontSize-3);
+  color: var(--color-primary);
 }
 
 .bio {
@@ -329,11 +320,11 @@ a:focus {
 }
 
 .react-share__ShareButton:hover circle{
-  fill: var(--color-text) !important;
+  fill: var(--color-primary) !important;
 }
 
 .btn {
-  background: var(--color-accent);
+  background: var(--color-secondary);
   padding: 10px 12px;
   border: 1px solid #000;
   border-left: none;
@@ -384,14 +375,14 @@ a:focus {
   bottom: 0;
   width: 100%;
   font-size: var(--fontSize-2);
-  background: var(--color-body-background);
+  background: var(--color-base);
   display: block;
   padding: 20px;
   text-align: center;
   left: 0;
   right: 0;
   border: none;
-  border-top: 2px solid var(--color-text);
+  border-top: 2px solid var(--color-primary);
   z-index: 10;
   appearance: none;
   -webkit-appearance: none;
@@ -407,8 +398,7 @@ a:focus {
   position: sticky;
   top: 0;
   z-index: 9;
-  /* border-top: 5px solid #BF5700; */
-  background: var(--color-body-background);
+  background: var(--color-base);
 }
 .reading-column {
   grid-area: content;
@@ -424,7 +414,7 @@ a:focus {
   position: fixed;
   width: 100%;
   bottom: 64px;
-  background: var(--color-body-background);
+  background: var(--color-base);
   opacity: 0;
   height: 0;
   overflow: hidden;
@@ -451,10 +441,10 @@ a:focus {
   text-decoration: none;
   font-size: var(--fontSize-2);
   font-family: var(--font-heading);
-  color: var(--color-text);
+  color: var(--color-primary);
 }
 .main-nav nav a:hover {
-  color: var(--color-accent);
+  color: var(--color-secondary);
 }
 .main-nav.is-active {
   opacity: 1;
@@ -538,7 +528,7 @@ a:focus {
     top: 420px;
   }
   .reading-column {
-    border-left: 2px solid var(--color-text);
+    border-left: 2px solid var(--color-primary);
   }
   .global-header {
     padding: 50px 0 10px 20px;
