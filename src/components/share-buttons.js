@@ -21,27 +21,27 @@ const ShareButtons = ({ShareTitle, url, twitterHandle}) => {
         <div className="share-button-wrapper">
           <h5>Sharing is Caring:</h5>
           <FacebookShareButton url={url} >
-                <FacebookIcon  size={33} round={true} bgStyle={{fill: "#01426A"}}/>
+                <FacebookIcon  size={33} round={true} bgStyle={{fill: "#000"}}/>
          </FacebookShareButton>
 
           <TwitterShareButton url={url} title={ShareTitle} via={twitterHandle}>
-                <TwitterIcon  size={33} round={true} bgStyle={{fill: "#01426A"}} />
+                <TwitterIcon  size={33} round={true} bgStyle={{fill: "#000"}} />
           </TwitterShareButton>
 
           <RedditShareButton url={url} title={ShareTitle} >
-            <RedditIcon  size={33} round={true} bgStyle={{fill: "#01426A"}} />
+            <RedditIcon  size={33} round={true} bgStyle={{fill: "#000"}} />
           </RedditShareButton>
 
           <InstapaperShareButton title={ShareTitle} >
-            <InstapaperIcon  size={33} round={true} bgStyle={{fill: "#01426A"}} />
+            <InstapaperIcon  size={33} round={true} bgStyle={{fill: "#000"}} />
           </InstapaperShareButton>
 
           <PocketShareButton title={ShareTitle}>
-            <PocketIcon  size={33} round={true} bgStyle={{fill: "#01426A"}} />
+            <PocketIcon  size={33} round={true} bgStyle={{fill: "#000"}} />
           </PocketShareButton>
 
           <EmailShareButton url={url} subject={ShareTitle}>
-            <EmailIcon  size={33} round={true} bgStyle={{fill: "#01426A"}} />
+            <EmailIcon  size={33} round={true} bgStyle={{fill: "#000"}} />
           </EmailShareButton>
 
         </div>
